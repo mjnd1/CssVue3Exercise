@@ -3,8 +3,8 @@
  * @version: 
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 12:41:09
- * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-03-05 18:48:31
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-10 17:41:12
  */
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -34,9 +34,9 @@ export default defineConfig(({ command, mode }) => {
 			envDir: "./env",
 			// 开发或生产环境服务的公共基础路径
 			base: process.env.VITE_APP_BASE_URL,
-			open: true, // 是否自动在浏览器中打开
 			// 配置开发服务器
 			server: {
+				open: true, // 是否自动在浏览器中打开
 				// proxy: { // 配置自定义代理规则
 				// 	[`${loadEnv(mode, process.cwd()).VITE_APP_BASE_URL}`]: {
 				// 		target: loadEnv(mode, process.cwd()).VITE_APP_BASE_URL, // 要使用 url 模块解析的 url 字符串
