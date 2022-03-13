@@ -4,7 +4,8 @@
 	"version": "0.0.0",
 	"scripts": {
 		"dev": "vite --port 8999 --mode development",
-		"build": "vite build",
+		"build:test": "vite build --mode development",
+		"build:prod": "vite build --mode production",
 		"preview": "vite preview"
 	},
 	"dependencies": {
