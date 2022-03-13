@@ -4,30 +4,30 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 12:41:09
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-03-05 22:42:43
+ * @LastEditTime: 2022-03-06 13:38:01
 -->
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
 console.log(import.meta.env);
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
-  <!-- 路由入口文件 -->
-  <router-link to="/test1"> btn </router-link>
-  <router-view />
+	<img alt="Vue logo" src="./assets/logo.png" />
+	<HelloWorld msg="Hello Vue 3 + Vite" />
+	<!-- 路由入口文件 -->
+	<router-link to="/test1"> btn </router-link>
+	<router-view />
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	margin-top: 60px;
 }
 </style>
