@@ -4,7 +4,7 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 12:41:09
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-03-13 16:02:02
+ * @LastEditTime: 2022-03-13 16:14:46
 -->
 # Vue 3 + Vite
 
@@ -22,3 +22,4 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 - npm run preview 本地预览生产环境
 
 1. [按钮冒泡效果](https://yleave.top/docs/CSS/CSS-demo/#1-%E6%8C%89%E9%92%AE%E5%86%92%E6%B3%A1%E6%95%88%E6%9E%9C)：主要是利用了 `background-image`、`transition`、`animation`属性来完成，顺便加上一点点JS。
+2. [点赞效果](https://yleave.top/docs/CSS/CSS-demo/#3-%E7%82%B9%E8%B5%9E%E7%88%B1%E5%BF%83%E6%95%88%E6%9E%9C)：主要是利用`background` + `transition`，加上一张长图来完成。
