@@ -4,24 +4,24 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 12:41:09
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-03-05 21:25:59
+ * @LastEditTime: 2022-03-06 13:39:35
 -->
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 defineProps({
-  msg: String
-})
+	msg: String,
+});
 
-const count = ref(0)
+const count = ref(0);
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+	<h1>{{ msg }}</h1>
 </template>
 
 <style scoped>
 a {
-  color: #42b983;
+	color: #42b983;
 }
 </style>

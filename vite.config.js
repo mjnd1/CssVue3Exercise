@@ -4,7 +4,7 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 12:41:09
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-10 17:41:12
+ * @LastEditTime: 2022-03-16 10:19:20
  */
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -51,7 +51,12 @@ export default defineConfig(({ command, mode }) => {
 		// command === 'build'
 		// build 独有的配置
 		return {
-
+			// 配置插件数组，必须配置对应的插件数组，不然会打包失败
+			plugins: [vue()],
+			build: {
+				// 指定输出路径（相对于 项目根目录).
+				outDir: './dist'
+			}
 		}
 	}
 })

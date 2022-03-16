@@ -1,0 +1,19 @@
+.icon-heart {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+	background-position: 0 0;
+	cursor: pointer;
+	-webkit-transition: background-position 1s steps(28);
+	/* 定义偏移转换效果，根据 background-position 的位置在 1 秒内进行 28 次偏移 */
+	transition: background-position 1s steps(28);
+	-webkit-transition-duration: 0s;
+	/* 当 is-active 被移除时，恢复灰色的爱心 */
+	transition-duration: 0s;
+}
+.is-active {
+	-webkit-transition-duration: 1s;
+	transition-duration: 1s;
+	background-position: -2800px 0;
+}

@@ -1,0 +1,96 @@
+/* 按钮的基础设置 */
+.btn-base {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	display: inline-block;
+	font-size: 1em;
+	padding: 2em 8em;
+	appearance: none;
+	background-color: #fff;
+	border-radius: 40px;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	box-shadow: 0 2px 25px rgba(93, 227, 236, 0.966);
+
+	/* 动画效果:过渡效果 */
+	transition: transform ease-in .1s, box-shadow ease-in .25s;
+}
+/* 元素在被鼠标点击到松开的时间内会被 :active 选择器选中 */
+.btn-base:active {
+	transform: scale(.9);
+	box-shadow: 0 2px 25px rgba(3, 227, 236, .2);
+}
+/* 泡泡效果 */
+.btn-base:before {
+	display: none;
+	top: -75%;
+	/* 使用 radial-gradient 来创建小泡泡 */
+	/* 而 display:none 和 top、bottom 的偏移让这些小泡泡初始时是隐藏的且位于按钮的上下两侧： */
+	background-image: radial-gradient(circle, #fff 20%, transparent 20%),
+		radial-gradient(circle, transparent 20%, #fff 20%, transparent 30%),
+		radial-gradient(circle, #fff 20%, transparent 20%),
+		radial-gradient(circle, #fff 20%, transparent 20%),
+		radial-gradient(circle, transparent 10%, #fff 15%, transparent 20%),
+		radial-gradient(circle, #fff 20%, transparent 20%),
+		radial-gradient(circle, #fff 20%, transparent 20%),
+		radial-gradient(circle, #fff 20%, transparent 20%),
+		radial-gradient(circle, #fff 20%, transparent 20%);
+	background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.btn-base:after {
+	display: none;
+	bottom: -75%;
+	background-image: radial-gradient(circle, #fff 20%, transparent 20%), 
+		radial-gradient(circle, #fff 20%, transparent 20%), 
+		radial-gradient(circle, transparent 10%, #fff 15%, transparent 20%), 
+		radial-gradient(circle, #fff 20%, transparent 20%), 
+		radial-gradient(circle, #fff 20%, transparent 20%), 
+		radial-gradient(circle, #fff 20%, transparent 20%), 
+		radial-gradient(circle, #fff 20%, transparent 20%);
+	background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+/* 还有着一些共同的样式处理：绝对定位 */
+.btn-base:before, .btn-base:after {
+	position: absolute;
+	content: '';
+	display: block;
+	width: 140%;
+	height: 100%;
+	left: -20%;
+	/* no-repeat 设置背景不要自动填充 */
+	background-repeat: no-repeat;
+}
+/* 泡泡动画效果的核心：animation 属性 */
+.btn-base.animate:before {
+	display: block;
+	animation: topBubbles ease-in-out 0.75s forwards;
+}
+.btn-base.animate:after {
+	display: block;
+	animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+/*  关键帧中则定义了这些小泡泡在动画过程中的三个时间点的位置和大小： */
+@keyframes topBubbles {
+  0% {
+	background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+	background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+	background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+	background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+	background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+	background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+	background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+	background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}

@@ -1,0 +1,80 @@
+<!--
+ * @Description: 页面主入口
+ * @Version: 2.0
+ * @Autor: ChenZhiWei
+ * @Date: 2022-03-15 09:28:56
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-16 10:00:11
+-->
+<script setup>
+import { defineComponent } from "vue";
+import HelloWorld from '../components/HelloWorld.vue';
+import Button from '../views/Button/index.vue';
+
+// 保存 组件 的数组
+const componentList = [Button, Button];
+for (let index = 0; index < 10; index += 1) {
+	componentList.push(Button);
+}
+
+
+</script>
+
+<template>
+	<img alt="Vue logo" src="../assets/logo.png" />
+	<HelloWorld msg="Hello Vue 3 + Vite" />
+	<div class="content-area">
+		<div v-for="ComponentItem in componentList">
+			<!-- 必须需要动态组件来渲染 -->
+			<!-- https://v3.cn.vuejs.org/api/sfc-script-setup.html#%E4%BD%BF%E7%94%A8%E7%BB%84%E4%BB%B6 -->
+			<component :is="ComponentItem"/>
+		</div>
+	</div>
+	<router-view />
+</template>
+
+<style>
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:40,400i,700");
+/* :root 这个 CSS 伪类匹配文档树的根元素。对于 HTML 来说，:root 表示 <html> 元素，除了优先级更高之外，与 html 选择器相同。 */
+:root {
+	--backgroundColor: rgba(246, 241, 209);
+	--colorShadeA: rgb(106, 163, 137);
+	--colorShadeB: rgb(121, 186, 156);
+	--colorShadeC: rgb(150, 232, 195);
+	--colorShadeD: rgb(187, 232, 211);
+	--colorShadeE: rgb(205, 255, 232);
+}
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+*::before,*::after {
+	box-sizing: border-box;
+}
+body {
+	font-family: "OpenSans", sans-serif;
+	font-size: 1rem;
+	line-height: 2;
+	/* display: flex;
+	align-items: center;
+	justify-content: center; */
+	margin: 0;
+	min-height: 100vh;
+	background: var(--backgroundColor);
+}
+
+.content-area {
+	display: flex;
+	justify-content: center;
+	/* 平分剩余空间 */
+	align-content: space-around;
+	/* 换行 */
+	flex-wrap: wrap;
+}
+/* >:子选择器(只会匹配第一个元素的直接后代子元素(也就是父子选择器)) */
+.content-area > div {
+	padding: 5px 10px;
+}
+</style>
