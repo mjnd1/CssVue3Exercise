@@ -3,16 +3,21 @@
  * @version: 
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 21:59:18
- * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-03-13 16:11:40
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-16 10:09:36
  */
 export default [
 	{
 		path: '/',
 		name: 'root',
-		redirect: '/root',
+		redirect: '/index',
 		component: () => import('../App.vue'),
 		children: []
+	},
+	{
+		path: '/index',
+		name: 'index',
+		component: () => import('../views/index.vue'),
 	},
 	{
 		path: '/test1',
