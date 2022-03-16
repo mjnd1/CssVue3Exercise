@@ -4,13 +4,13 @@
  * @Autor: ChenZhiWei
  * @Date: 2022-03-11 12:13:25
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-11 17:00:53
+ * @LastEditTime: 2022-03-16 11:18:15
 -->
 <template>
 	<div>
-		<button class="3D-btn ">Don`t</button>
-		<button class="3D-btn ">Push</button>
-		<button class="3D-btn ">Me</button>
+		<button class="btn-3D">Don`t</button>
+		<button class="btn-3D">Push</button>
+		<button class="btn-3D">Me</button>
 	</div>
 </template>
 <script lang="ts">
@@ -21,4 +21,4 @@ export default defineComponent({
 	setup(props, context) {},
 });
 </script>
-<style src="./3DCartoonEffect.module.css" scoped></style>
+<style src="./3DCartoonEffect.css" scoped></style>

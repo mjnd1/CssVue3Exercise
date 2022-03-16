@@ -4,7 +4,7 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 21:59:18
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-16 10:09:36
+ * @LastEditTime: 2022-03-16 10:22:22
  */
 export default [
 	{
@@ -18,6 +18,18 @@ export default [
 		path: '/index',
 		name: 'index',
 		component: () => import('../views/index.vue'),
+	},
+	{
+		path: '/button',
+		name: 'button',
+		component: () => import('../views/Button/index.vue'),
+		children: [
+			{
+				path: '/3DCartoonEffect',
+				name: '3DCartoonEffect',
+				component: () => import('../views/Button/3D卡通按钮效果/3DCartoonEffect.vue'),
+			}
+		],
 	},
 	{
 		path: '/test1',
