@@ -4,7 +4,7 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 12:41:09
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-16 10:19:31
+ * @LastEditTime: 2022-03-16 11:37:31
 -->
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
@@ -18,6 +18,7 @@ console.log(import.meta.env);
   <router-view />
 </template>
 
+<style src="./assets/css/global.mark.css"></style>
 <style>
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
