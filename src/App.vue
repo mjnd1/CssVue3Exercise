@@ -3,8 +3,8 @@
  * @version: 
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 12:41:09
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-16 11:37:31
+ * @LastEditors: ChenZhiWei
+ * @LastEditTime: 2022-03-20 15:00:53
 -->
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
@@ -27,5 +27,6 @@ console.log(import.meta.env);
 	text-align: center;
 	color: #2c3e50;
 	margin-top: 60px;
+	user-select: none;
 }
 </style>
