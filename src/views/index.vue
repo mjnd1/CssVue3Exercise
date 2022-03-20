@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Autor: ChenZhiWei
  * @Date: 2022-03-15 09:28:56
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-16 11:36:38
+ * @LastEditors: ChenZhiWei
+ * @LastEditTime: 2022-03-20 14:55:14
 -->
 <script setup>
 import { defineComponent } from "vue";
@@ -12,10 +12,10 @@ import HelloWorld from '../components/HelloWorld.vue';
 import Button from '../views/Button/index.vue';
 
 // 保存 组件 的数组
-const componentList = [Button, Button];
-for (let index = 0; index < 10; index += 1) {
-	componentList.push(Button);
-}
+const componentList = [Button];
+// for (let index = 0; index < 10; index += 1) {
+// 	componentList.push(Button);
+// }
 
 
 </script>
