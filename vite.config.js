@@ -3,8 +3,8 @@
  * @version: 
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 12:41:09
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-14 09:49:10
+ * @LastEditors: ChenZhiWei
+ * @LastEditTime: 2022-03-20 13:33:16
  */
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -45,6 +45,10 @@ export default defineConfig(({ command, mode }) => {
 				// 		ws: true, // 是否启用 websocket
 				// 	}
 				// }
+			},
+			// CSS配置
+			css: {
+				postcss: './postcss.config.js',
 			}
 		}
 	} else {
