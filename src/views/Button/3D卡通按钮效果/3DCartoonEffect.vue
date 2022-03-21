@@ -4,7 +4,7 @@
  * @Autor: ChenZhiWei
  * @Date: 2022-03-11 12:13:25
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-16 11:18:15
+ * @LastEditTime: 2022-03-17 16:56:53
 -->
 <template>
 	<div>
@@ -13,12 +13,12 @@
 		<button class="btn-3D">Me</button>
 	</div>
 </template>
-<script lang="ts">
+<script setup>
 import { defineComponent } from "vue";
-export default defineComponent({
-	name: "",
-	props: {},
-	setup(props, context) {},
+
+// 按钮配置项, 在 setup 中必须使用 definProps 来声明
+const buttonOptions = defineProps({
+	title: String,
 });
 </script>
 <style src="./3DCartoonEffect.css" scoped></style>
