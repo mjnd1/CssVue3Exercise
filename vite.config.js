@@ -3,11 +3,12 @@
  * @version: 
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 12:41:09
- * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-03-20 15:00:46
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2022-03-21 14:00:16
  */
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx';
 
 // 配置 base_url 路径
 // if (process.env.NODE_ENV === 'development') {
@@ -29,7 +30,9 @@ export default defineConfig(({ command, mode }) => {
 		// dev 独有的配置
 		return {
 			// 配置插件数组
-			plugins: [vue()],
+			plugins: [vue(),vueJsx({
+				// 选项被传递给@vue/babel-plugin-jsx 
+			})],
 			// 用于加载 .env 文件的目录
 			envDir: "./env",
 			// 开发或生产环境服务的公共基础路径
