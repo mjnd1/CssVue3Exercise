@@ -4,13 +4,13 @@
  * @Autor: ChenZhiWei
  * @Date: 2022-03-11 12:10:55
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-21 14:01:23
+ * @LastEditTime: 2022-03-23 17:05:59
 -->
 <template>
 	<router-link to="/3DCartoonEffect">3D卡通按钮效果</router-link>
 	<SimpleStyleButton />
 	<div v-for="item in ChenButtonList" :key="item.id">
-		<ChenButton />
+		<ChenButton :config="item" />
 		{{
 			item.porps
 		}}
