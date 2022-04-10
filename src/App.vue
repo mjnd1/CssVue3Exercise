@@ -4,7 +4,7 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 12:41:09
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-03-20 15:00:53
+ * @LastEditTime: 2022-04-10 14:29:28
 -->
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
@@ -14,7 +14,6 @@ console.log(import.meta.env);
 
 <template>
   <!-- 路由入口文件 -->
-  <!-- <router-link to="/button"> Button Css 效果 </router-link> -->
   <router-view />
 </template>
 

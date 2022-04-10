@@ -30,3 +30,9 @@ body {
 	/* background: var(--backgroundColor); */
 	background: #E4EBF5;
 }
+
+button {
+	padding: 5px 10px;
+	border-radius: 5px;
+	border-color: #FFF;
+}

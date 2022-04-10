@@ -3,8 +3,8 @@
  * @version: 
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 21:59:18
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-03-16 10:22:22
+ * @LastEditors: ChenZhiWei
+ * @LastEditTime: 2022-04-10 19:56:02
  */
 export default [
 	{
@@ -34,6 +34,13 @@ export default [
 	{
 		path: '/test1',
 		name: 'test1',
-		component: () => import('../views/test1/点赞爱心效果/index.vue'),
+		component: () => import('../views/test1/test1.vue'),
+		children: [
+			{
+				path: '/ButtonBubbleEffect',
+				name: 'ButtonBubbleEffect',
+				component: () => import('../views/test1/按钮冒泡效果/index.vue'),
+			}
+		]
 	}
 ]

@@ -1,36 +1,48 @@
 <!--
- * @Description: 页面主入口
+ * @Description: 每个模块页面主入口
  * @Version: 2.0
  * @Autor: ChenZhiWei
  * @Date: 2022-03-15 09:28:56
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-03-20 14:55:14
+ * @LastEditTime: 2022-04-10 19:02:40
 -->
 <script setup>
 import { defineComponent } from "vue";
 import HelloWorld from '../components/HelloWorld.vue';
-import Button from '../views/Button/index.vue';
+import ButtonIndex from './Button/index.vue';
+import Test1Index from './test1/test1.vue';
+
+// import path from 'path';
+// const __dirname = path.resolve();
+// 读取views里面的目录名称
+import { readerFolderName } from '../Utils/readModeFileName';
+const list = readerFolderName(__dirname + "/src/views");
+console.log("list", list);
 
 // 保存 组件 的数组
-const componentList = [Button];
-// for (let index = 0; index < 10; index += 1) {
-// 	componentList.push(Button);
-// }
+const componentList = [
+	{
+		compName: "Button特效",
+		component: ButtonIndex,
+	},
+];
 
-
+// TODO: 事件处理
 </script>
 
 <template>
 	<img alt="Vue logo" src="../assets/logo.png" />
 	<HelloWorld msg="Hello Vue 3 + Vite" />
 	<div class="content-area">
-		<div v-for="ComponentItem in componentList">
-			<!-- 必须需要动态组件来渲染 -->
-			<!-- https://v3.cn.vuejs.org/api/sfc-script-setup.html#%E4%BD%BF%E7%94%A8%E7%BB%84%E4%BB%B6 -->
+		<!-- <div v-for="ComponentItem in componentList">
+			必须需要动态组件来渲染
+			https://v3.cn.vuejs.org/api/sfc-script-setup.html#%E4%BD%BF%E7%94%A8%E7%BB%84%E4%BB%B6
 			<component :is="ComponentItem"/>
+		</div> -->
+		<div v-for="(item, index) in componentList" :key="index">
+			<button>{{ item.compName }}</button>
 		</div>
 	</div>
-	<router-view />
 </template>
 
 <style>
