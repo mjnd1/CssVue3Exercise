@@ -4,7 +4,7 @@
  * @Autor: ChenZhiWei
  * @Date: 2022-03-15 09:28:56
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-04-16 14:55:51
+ * @LastEditTime: 2022-04-16 15:52:33
 -->
 <script setup>
 import { defineComponent } from "vue";
@@ -23,6 +23,10 @@ const componentList = [
 	{
 		compName: "Button特效",
 		compRoutePath: "/button",
+	},
+	{
+		compName: "点击特效",
+		compRoutePath: "/click",
 	},
 ];
 

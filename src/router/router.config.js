@@ -4,7 +4,7 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 21:59:18
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-04-16 15:50:44
+ * @LastEditTime: 2022-04-16 15:52:35
  */
 export default [
 	{
@@ -37,8 +37,8 @@ export default [
 		],
 	},
 	{
-		path: '/test1',
-		name: 'test1',
+		path: '/click',
+		name: 'click',
 		component: () => import('../views/test1/test1.vue'),
 		children: [
 			{
