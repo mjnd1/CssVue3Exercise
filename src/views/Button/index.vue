@@ -4,27 +4,69 @@
  * @Autor: ChenZhiWei
  * @Date: 2022-03-11 12:10:55
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-04-10 14:20:11
+ * @LastEditTime: 2022-04-16 15:46:45
 -->
 <template>
-	<router-link to="/button">3D卡通按钮效果</router-link>
-	<div v-for="item in ChenButtonList" :key="item.id">
+	<div v-if="!isRenderChild">
+		<div v-for="item in buttonList" :key="item.id">
+			<span @click="jumpToChildCompPage(item.routerPath, $event)">{{ item.buttonName }}</span>
+		</div>
 	</div>
+	<router-view v-else></router-view>
 </template>
 <script setup>
-import { defineComponent } from 'vue'
+import { defineComponent,ref } from 'vue'
+import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router';
+import router from '../../router/index';
+// TODO: 数据声明
+const buttonList = [
+	{
+		id: 1,
+		buttonName: "3D卡通按钮效果",
+		routerPath: "button/3DCartoonEffect",
+	},
+];
+// 定义一个基本类型的变量 => 是否渲染了子组件，当子组件渲染上，隐藏循环
+let isRenderChild = ref(false);
 
-const ChenButtonList = [0].map((item,index) => {
-	let porps = {
-		title: Math.random(1,100),
+// TODO: 事件处理
+/**
+ * @name: 跳转到 routerPat 对应的路径
+ * @test: test font
+ * @msg: 
+ * @param {*} routerPath 路由URL
+ * @param {*} e 原始的 DOM 事件
+ * @return {*}
+ */
+const jumpToChildCompPage = (routerPath, e) => {
+	// console.log("jumpToChildCompPage", routerPath, e);
+	if (routerPath) {
+		// 修改
+		isRenderChild.value = true;
+		router.push(routerPath);
 	}
-	return {
-		id: Math.random(1, 100) + index + 1,
-		porps,
+}
+
+// TODO: 生命周期
+// 组件内路由
+onBeforeRouteUpdate((to, from, next) => {
+	// ...
+	console.log("当前路由改变，但是该组件被复用时调用", to, from);
+	if (to.path === '/button') {
+		// 回到该组件，重新设置 isRenderChild
+		isRenderChild.value && (isRenderChild.value = false);
 	}
-});
-console.log(import.meta.env);
-console.log("ChenButtonList", ChenButtonList);
+	next();
+})
+onBeforeRouteLeave((to, from, next) => {
+	// ...
+	console.log("离开该组件");
+	next();
+})
+// console.log(import.meta.env);
+// console.log("buttonList", buttonList);
+// console.log("router", router);
+console.log("index - isRenderChild	", isRenderChild);
 </script>
 <style>
 </style>
