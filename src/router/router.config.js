@@ -4,7 +4,7 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 21:59:18
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-04-16 15:52:35
+ * @LastEditTime: 2022-04-16 16:00:01
  */
 export default [
 	{
@@ -45,7 +45,12 @@ export default [
 				path: '/ButtonBubbleEffect',
 				name: 'ButtonBubbleEffect',
 				component: () => import('../views/test1/按钮冒泡效果/index.vue'),
-			}
+			},
+			{
+				path: '/LikeLoveEffect',
+				name: 'LikeLoveEffect',
+				component: () => import('../views/test1/点赞爱心效果/index.vue'),
+			},
 		]
 	}
 ]

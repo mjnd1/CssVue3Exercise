@@ -4,7 +4,7 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 22:32:42
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-04-16 15:57:32
+ * @LastEditTime: 2022-04-16 16:00:18
 -->
 <template>
 	<div v-if="!isRenderChild">
@@ -30,6 +30,11 @@ export default defineComponent({
 				id: 1,
 				buttonName: "按钮冒泡效果",
 				routerPath: "click/ButtonBubbleEffect",
+			},
+			{
+				id: 2,
+				buttonName: "点赞爱心效果",
+				routerPath: "click/LikeLoveEffect",
 			},
 		];
 		// 定义一个基本类型的变量 => 是否渲染了子组件，当子组件渲染上，隐藏循环
