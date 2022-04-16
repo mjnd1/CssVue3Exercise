@@ -4,7 +4,7 @@
  * @Autor: ChenZhiWei
  * @Date: 2022-03-11 12:10:55
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-04-16 15:46:45
+ * @LastEditTime: 2022-04-16 15:50:57
 -->
 <template>
 	<div v-if="!isRenderChild">
@@ -24,6 +24,11 @@ const buttonList = [
 		id: 1,
 		buttonName: "3D卡通按钮效果",
 		routerPath: "button/3DCartoonEffect",
+	},
+	{
+		id: 2,
+		buttonName: "简约风按钮效果",
+		routerPath: "button/SimpleStyleButton",
 	},
 ];
 // 定义一个基本类型的变量 => 是否渲染了子组件，当子组件渲染上，隐藏循环

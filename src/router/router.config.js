@@ -4,7 +4,7 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 21:59:18
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-04-10 19:56:02
+ * @LastEditTime: 2022-04-16 15:50:44
  */
 export default [
 	{
@@ -28,6 +28,11 @@ export default [
 				path: '/3DCartoonEffect',
 				name: '3DCartoonEffect',
 				component: () => import('../views/Button/3D卡通按钮效果/3DCartoonEffect.vue'),
+			},
+			{
+				path: '/SimpleStyleButton',
+				name: 'SimpleStyleButton',
+				component: () => import('../views/Button/简约风按钮效果/SimpleStyleButton.vue'),
 			}
 		],
 	},
