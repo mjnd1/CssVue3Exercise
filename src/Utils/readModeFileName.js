@@ -4,10 +4,12 @@
  * @Author: ChenZhiWei
  * @Date: 2022-04-10 14:24:36
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-04-10 16:44:40
+ * @LastEditTime: 2022-04-10 21:09:09
  */
 // 使用基于 promise 的文件系统
-import * as fs from 'fs/promises';
+// import * as fs from 'fs/promises';
+const fs = require('fs/promises');
+
 /**
  * @name: 获取文件夹名称
  * @test: test font
@@ -15,7 +17,7 @@ import * as fs from 'fs/promises';
  * @param {*} filePath 文件夹路径
  * @return {*}
  */
-export const readerFolderName = async (filePath) => {
+const readerFolderName = async (filePath) => {
 	let fileNameList = [];
 	try {
 		new Promise((resolve, reject) => {
@@ -45,3 +47,15 @@ export const readerFolderName = async (filePath) => {
 		console.log("error", error);
 	}
 }
+// console.log("global", global);
+// console.log("process", process);
+module.exports = {
+	readerFolderName
+}
+// const path = require('path');
+// const __dirname = path.resolve();
+// 读取views里面的目录名称
+// const list = readerFolderName(__dirname + "/src/views");
+console.log("__dirname", __dirname);
+// console.log("list", list);
+console.log("this", this);

@@ -4,7 +4,7 @@
  * @Author: ChenZhiWei
  * @Date: 2022-03-05 21:58:10
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-03-05 22:28:18
+ * @LastEditTime: 2022-04-16 14:56:30
  */
 import { createRouter, createWebHashHistory } from 'vue-router';
 import routes from './router.config';
@@ -18,3 +18,5 @@ export const router = createRouter({
 	// createWebHistory => 不带 # 号，需后端支持，createWebHashHistory带#号
 	routes,
 });
+
+export default router;

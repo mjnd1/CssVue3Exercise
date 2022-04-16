@@ -4,30 +4,43 @@
  * @Autor: ChenZhiWei
  * @Date: 2022-03-15 09:28:56
  * @LastEditors: ChenZhiWei
- * @LastEditTime: 2022-04-10 19:02:40
+ * @LastEditTime: 2022-04-16 14:55:51
 -->
 <script setup>
 import { defineComponent } from "vue";
 import HelloWorld from '../components/HelloWorld.vue';
-import ButtonIndex from './Button/index.vue';
-import Test1Index from './test1/test1.vue';
+import router from "../router/index";
 
 // import path from 'path';
 // const __dirname = path.resolve();
 // 读取views里面的目录名称
-import { readerFolderName } from '../Utils/readModeFileName';
-const list = readerFolderName(__dirname + "/src/views");
-console.log("list", list);
+// import { readerFolderName } from '../Utils/readModeFileName';
+// const list = readerFolderName(__dirname + "/src/views");
+// console.log("list", list);
 
 // 保存 组件 的数组
 const componentList = [
 	{
 		compName: "Button特效",
-		component: ButtonIndex,
+		compRoutePath: "/button",
 	},
 ];
 
 // TODO: 事件处理
+
+/**
+ * @name: 跳转到 routerPat 对应的路径
+ * @test: test font
+ * @msg: 
+ * @param {*} routerPath 路由URL
+ * @param {*} e 原始的 DOM 事件
+ * @return {*}
+ */
+const jumpToChildCompPage = (routerPath, e) => {
+	if (routerPath) {
+		router.push(routerPath);
+	}
+}
 </script>
 
 <template>
@@ -40,7 +53,7 @@ const componentList = [
 			<component :is="ComponentItem"/>
 		</div> -->
 		<div v-for="(item, index) in componentList" :key="index">
-			<button>{{ item.compName }}</button>
+			<button @click="jumpToChildCompPage(item.compRoutePath, $event)">{{ item.compName }}</button>
 		</div>
 	</div>
 </template>
